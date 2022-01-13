@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+*{
+	margin: 0;
+	padding:0;
+	font-family: 'Manrope';
+}
+body{
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	background-color: hsl(210, 46%, 95%);
+	color: hsl(217, 19%, 35%);
+
+}
+main{
+	width: 50vw;
+	height: 36vh;
+	display: flex;
+}
+
+#left{
+	flex: 40%;
+	background-image: url('images/drawers.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 15px 0px 0px 15px;
+}
+#right{
+	flex:60%;
+	padding: 25px 30px;
+	background-color: white;
+	border-radius: 0px 15px 15px 0px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+#para1{
+	font-size: 13px;
+	padding-top: 10px; 
+	font-weight: 500;
+	color: hsl(214, 17%, 51%);
+}
+
+#last{
+	display: flex;
+	width: 100%;
+	margin-top: auto;
+}
+#mimage{
+	border-radius: 50%;
+	width: 10.5%;
+	/*height: 8.5%;*/
+	align-self: center;
+}
+#michele{
+	font-size: 13px;
+	padding-left: 10px;
+}
+#michele :first-child{
+	font-weight: 700;
+}
+#michele :last-child{
+	color: hsl(214, 17%, 51%);
+}
+.share{
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background-color:  hsl(210, 46%, 95%);
+	margin-left:  auto;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ .socialicons{
+  visibility: hidden;
+  display: flex;
+	justify-content: space-around;
+  width: 220px;
+  height: 35px;
+  background-color: hsl(217, 19%, 35%);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+     margin-top: -80px;
+    margin-left: 247px;
+    	align-items: center;
+	padding: 30px;
+  position: absolute;
+	box-sizing: border-box;
+}
+
+.socialicons::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+
+.share:active + .socialicons{
+	visibility: visible;
+
+}
+.share:active{
+	background-color: hsl(214, 17%, 51%);
+}
+.share:active path{
+	fill: white;
+}
+.socialicons p{
+	color:  hsl(210, 46%, 95%);
+	letter-spacing: 5px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 375px) {
+	
+	br{
+		display: none;
+	}
+	main{
+		flex-direction: column;
+		overflow: visible;
+		width: 90vw;
+		height: 65vh;
+	}
+	#para1{
+		padding-top: 20px;
+	}
+	#left{
+		/*background-size: 100%;*/
+		flex:33%;
+		border-radius: 15px 15px 0px 0px;
+	}
+	#right{
+		border-radius: 0px 0px 15px 15px;
+		padding-bottom: 0px;
+		height: 100%;
+	}
+	#last{
+		align-self: end;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+
+	.share:active #last{
+		display: none;
+		visibility: hidden;
+	}
+	.socialicons:after{
+		content: none;
+	}
+	.socialicons{
+		justify-content: flex-start;
+		margin-top: auto;
+		height: 80px;
+		border-top-right-radius: 0px;
+		border-top-left-radius:0px;
+		width: 100%;
+  		right: 0%;
+  		bottom: 0%;
+	}
+	.share:active{
+		z-index: 2;
+	}
+	.socialicons > div{
+		padding-left: 15px;
+	}
+}
